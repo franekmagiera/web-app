@@ -1,16 +1,18 @@
 // Currently only using it for the form.
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
 import searchEntities from '../api/searchEntities.js' 
 
 const LeftPane = (props) => {
     const [entity, setEntity] = useState('');
     const [language, setLanguage] = useState('en');
+    const [showAlert, setShowAlert] = useState(false);
 
     const onSearchClick = async () => {
         if (!entity) {
-            console.log('Show alert - entity field cannot be empty!');
+            setShowAlert(true);
         } else {
+            setShowAlert(false);
             const result =  await searchEntities(entity, language);
             props.onSearch(result);
         }
@@ -18,6 +20,9 @@ const LeftPane = (props) => {
 
     return (
         <div className='form'>
+            <Alert color='danger' isOpen={showAlert} toggle={() => setShowAlert(false)}>
+                Entity field cannot be empty!
+            </Alert>
             <Form>
                 <FormGroup>
                     <Label for='search'>Entity</Label>
