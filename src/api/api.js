@@ -14,7 +14,7 @@ const dropKeys = (obj) => {
     return Object.fromEntries(filteredEntries);
 };
 
-const searchEntities = async (search, language) => {
+export const searchEntities = async (search, language) => {
     const url = wdk.searchEntities({ search, language });
     // TODO: add exception handling for api call failure and result.data.search etc. being undefined.
     const result = await axios.get(url);
@@ -25,4 +25,9 @@ const searchEntities = async (search, language) => {
     };
 };
 
-export default searchEntities;
+export const executeQuery = async (query) => {
+    // TODO: add exception handling.
+    const [url, body] = wdk.sparqlQuery(query).split('?');
+    const result = await axios.post(url, body);
+    return result.data;
+};

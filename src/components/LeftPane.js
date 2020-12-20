@@ -1,53 +1,29 @@
-// Currently only using it for the form.
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
-import searchEntities from '../api/searchEntities.js' 
+import { Form, FormGroup, Label, Input } from 'reactstrap';
+import SearchEntitiesForm from './SearchEntitiesForm.js';
+import SparqlForm from './SparqlForm.js';
 
 const LeftPane = (props) => {
-    const [entity, setEntity] = useState('');
-    const [language, setLanguage] = useState('en');
-    const [showAlert, setShowAlert] = useState(false);
-
-    const search = async () => {
-        if (!entity) {
-            setShowAlert(true);
-        } else {
-            setShowAlert(false);
-            const result =  await searchEntities(entity, language);
-            props.onSearch(result);
-        }
-    };
-
-    // Prevent enter from refreshing the page, make it search the entity instead.
-    const handleKeyDown = (event) => {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            search();
-        }
+    const [form, setForm] = useState('Search entities');
+    const options = {
+        'Search entities': <SearchEntitiesForm onSearch={props.onSearch} />,
+        'SPARQL query': <SparqlForm onSearch={props.onSearch} />
     };
 
     return (
-        <div className='form'>
-            <Alert color='danger' isOpen={showAlert} toggle={() => setShowAlert(false)}>
-                Entity field cannot be empty!
-            </Alert>
+        <div className='leftPaneForm'>
             <Form>
                 <FormGroup>
-                    <Label for='search'>Entity</Label>
-                    <Input placeholder='What entity do you want to search for?' onChange={event => setEntity(event.target.value)} onKeyDown={handleKeyDown}></Input>
-                </FormGroup>
-                <FormGroup>
-                    <Label for='language'>Language</Label>
-                    <Input type='select' name='select' onChange={event => setLanguage(event.target.value)}>
-                        <option>en</option>
-                        <option>pl</option>
+                    <Label for='Data-source'>Data source</Label>
+                    <Input type='select' name='select' onChange={event => setForm(event.target.value)}>
+                        {Object.keys(options).map(opt => <option>{opt}</option>)};
                     </Input>
                 </FormGroup>
             </Form>
-            <Button color='primary' onClick={search}>Search</Button>
+            {options[form]}
         </div>
-    );
 
+    );
 };
 
 export default LeftPane;

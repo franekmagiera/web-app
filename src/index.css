@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
-.form {
+.leftPaneForm {
   padding: 5%;
+}
+
+.textareaQuery {
+  resize: none;
+  min-height: 200px;
 }
