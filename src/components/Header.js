@@ -17,11 +17,11 @@ const Header = (props) => {
                     <FontAwesomeIcon icon={faGithub} size='2x' fixedWidth />
                 </a>
                 </NavbarText>
-                <NavbarBrand className='mx-auto order-0'>Wikidata Seeker</NavbarBrand>
+                <NavbarBrand className='mx-auto order-0'>Wikidata Explorer</NavbarBrand>
 
                 <Tooltip placement='bottom' isOpen={showTooltip} target='tooltip-about' toggle={toggleTooltip}>
-                    <h6>About Wikidata Seeker</h6>
-                    <span>Wikidata Seeker let's you search for entities present in wikidata.org. For more information, visit project's GitHub page by clicking on the icon next to the question mark.</span>
+                    <h6>About Wikidata Explorer</h6>
+                    <span>Wikidata Explorer let's you search for entities present in wikidata.org. For more information, visit project's GitHub page by clicking on the icon next to the question mark.</span>
                 </Tooltip>
             </Navbar>
         </div>

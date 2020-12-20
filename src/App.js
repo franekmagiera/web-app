@@ -17,7 +17,7 @@ function App() {
               <LeftPane onSearch={setData} />
           </Col>
           <Col sm='9' className='rightPanelCol'>
-              <RightPane  data={data} />
+              <RightPane data={data} />
           </Col>
         </Row>
       </Container>

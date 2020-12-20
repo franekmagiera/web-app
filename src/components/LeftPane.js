@@ -8,7 +8,7 @@ const LeftPane = (props) => {
     const [language, setLanguage] = useState('en');
     const [showAlert, setShowAlert] = useState(false);
 
-    const onSearchClick = async () => {
+    const search = async () => {
         if (!entity) {
             setShowAlert(true);
         } else {
@@ -16,7 +16,15 @@ const LeftPane = (props) => {
             const result =  await searchEntities(entity, language);
             props.onSearch(result);
         }
-    }
+    };
+
+    // Prevent enter from refreshing the page, make it search the entity instead.
+    const handleKeyDown = (event) => {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            search();
+        }
+    };
 
     return (
         <div className='form'>
@@ -26,7 +34,7 @@ const LeftPane = (props) => {
             <Form>
                 <FormGroup>
                     <Label for='search'>Entity</Label>
-                    <Input placeholder='What entity do you want to search for?' onChange={event => setEntity(event.target.value)}></Input>
+                    <Input placeholder='What entity do you want to search for?' onChange={event => setEntity(event.target.value)} onKeyDown={handleKeyDown}></Input>
                 </FormGroup>
                 <FormGroup>
                     <Label for='language'>Language</Label>
@@ -36,7 +44,7 @@ const LeftPane = (props) => {
                     </Input>
                 </FormGroup>
             </Form>
-            <Button color='primary' onClick={onSearchClick}>Search</Button>
+            <Button color='primary' onClick={search}>Search</Button>
         </div>
     );
 
