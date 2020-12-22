@@ -48,7 +48,7 @@ const SearchEntitiesForm = (props) => {
                     </Input>
                 </FormGroup>
             </Form>
-            <Button color='primary' onClick={search}>Search</Button>
+            <Button color='primary' onClick={search} block>Search</Button>
         </div>
     );
 };

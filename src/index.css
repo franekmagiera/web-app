@@ -20,6 +20,10 @@ code {
   padding: 5%;
 }
 
+.exportButton {
+  padding: 0 5%;
+}
+
 .textareaQuery {
   resize: none;
   min-height: 200px;

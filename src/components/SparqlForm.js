@@ -42,7 +42,7 @@ ORDER BY xsd:integer(SUBSTR(STR(?continent),STRLEN("http://www.wikidata.org/enti
                     <Input type='textarea' name='query' className='textareaQuery' wrap='off' value={query} spellcheck='false' onChange={event => setQuery(event.target.value)} />
                 </FormGroup>
             </Form>
-            <Button color='primary' onClick={execute}>Execute</Button>
+            <Button color='primary' onClick={execute} block>Execute</Button>
         </div>
     );
 };
