@@ -1,5 +1,7 @@
 # Wikidata Explorer 
 
+[Live demo](https://franekmagiera.github.io/wikidata-explorer/)
+
 A simple project for the Linked Open Data and Knowledge Graphs university course.
 The website enables the user to search for entities inside of wikidata and execute SPARQL queries. The retrieved data can be downloaded as a JSON file.
 
