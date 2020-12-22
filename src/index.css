@@ -11,20 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.leftPaneCol {
-  background-color: aliceblue;
-}
-
-.leftPaneForm {
-  padding: 5%;
-}
-
-.exportButton {
-  padding: 0 5%;
-}
-
-.textareaQuery {
-  resize: none;
-  min-height: 200px;
-}
