@@ -1,34 +1,20 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import DataSourceEnum from './DataSourceEnum.js';
+import SearchEntitiesTable from './SearchEntitiesTable.js';
+import SparqlTable from './SparqlTable.js';
 
 const RightPane = (props) => {
-    // TODO: add exception/null/undefined checks.
-    // if (!props.data) {
-    //     return <div></div>;
-    // }
-
-    // const columnNames = (props.data.columns);
-
-    const createTableData = (key, element) => {
-        const tableData = (key === 'concepturi' ? <a href={element} target='_blank' rel='noopener noreferrer'>{element}</a> : element);
-        return <td>{tableData}</td>;
-    };
+    
+    const componentMapping = Object.freeze({
+        [DataSourceEnum.SEARCH_ENTITIES]: <SearchEntitiesTable data={props.data} />,
+        [DataSourceEnum.SPARQL_QUERY]: <SparqlTable data={props.data} />
+    });
 
     return (
-        // <div>
-        //     <Table borderless responsive size='sm'>
-        //         <thead>
-        //             <tr>
-        //                 {columnNames.map(columnName => <th>{columnName}</th>)}
-        //             </tr>
-        //         </thead>
-        //         <tbody>
-        //             {props.data.entities.map(entry => <tr>{Object.entries(entry).map(([key, element]) => createTableData(key, element))}</tr>)}
-        //         </tbody>
-        //     </Table>
-        // </div>
-        <p>{JSON.stringify(props)}</p>
-    )
+        <div>
+            {componentMapping[props.dataSourceType]}
+        </div>
+    );
 };
 
 export default RightPane;

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.leftPaneCol {
+  background-color: aliceblue;
+}
+
 .leftPaneForm {
   padding: 5%;
 }

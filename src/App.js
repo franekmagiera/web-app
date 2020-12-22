@@ -7,6 +7,7 @@ import RightPane from './components/RightPane.js';
 
 function App() {
   const [data, setData] = useState(null);
+  const [dataSourceType, setDataSourceType] = useState(null);
 
   return (
     <div>
@@ -14,14 +15,13 @@ function App() {
       <Container fluid>
         <Row>
           <Col sm='3' className='leftPaneCol'>
-              <LeftPane onSearch={setData} />
+              <LeftPane onSearch={setData} onDataSourceChange={setDataSourceType} />
           </Col>
           <Col sm='9' className='rightPanelCol'>
-              <RightPane data={data} />
+              <RightPane data={data} dataSourceType={dataSourceType} />
           </Col>
         </Row>
       </Container>
-      
     </div>
   );
 }

@@ -6,14 +6,21 @@ const SearchEntitiesForm = (props) => {
     const [entity, setEntity] = useState('');
     const [language, setLanguage] = useState('en');
     const [showAlert, setShowAlert] = useState(false);
+    const [alertText, setAlertText] = useState('');
 
     const search = async () => {
         if (!entity) {
+            setAlertText('Entity field cannot be empty!');
             setShowAlert(true);
         } else {
             setShowAlert(false);
-            const result =  await searchEntities(entity, language);
-            props.onSearch(result);
+            try {
+                const result =  await searchEntities(entity, language);
+                props.onSearch(result);
+            } catch (error) {
+                setAlertText(error.message);
+                setShowAlert(true);
+            }
         }
     };
 
@@ -27,9 +34,7 @@ const SearchEntitiesForm = (props) => {
 
     return (
         <div>
-            <Alert color='danger' isOpen={showAlert} toggle={() => setShowAlert(false)}>
-                Entity field cannot be empty!
-            </Alert>
+            <Alert color='danger' isOpen={showAlert} toggle={() => setShowAlert(false)}>{alertText}</Alert>
             <Form>
                 <FormGroup>
                     <Label for='search'>Entity</Label>

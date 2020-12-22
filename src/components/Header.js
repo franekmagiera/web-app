@@ -21,7 +21,7 @@ const Header = (props) => {
 
                 <Tooltip placement='bottom' isOpen={showTooltip} target='tooltip-about' toggle={toggleTooltip}>
                     <h6>About Wikidata Explorer</h6>
-                    <span>Wikidata Explorer let's you search for entities present in wikidata.org. For more information, visit project's GitHub page by clicking on the icon next to the question mark.</span>
+                    <span>Wikidata Explorer let's you search for entities present in wikidata.org end execute SPARQL queries. For more information, visit project's GitHub page by clicking on the icon next to the question mark.</span>
                 </Tooltip>
             </Navbar>
         </div>

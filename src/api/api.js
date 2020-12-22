@@ -7,26 +7,16 @@ const wdk = WBK({
     instance: DB_INSTANCE,
     sparqlEndpoint: SPARQL_ENDPOINT
 });
-const wantedKeys = ['concepturi', 'label', 'description', 'aliases'];
 
-const dropKeys = (obj) => {
-    const filteredEntries = Object.entries(obj).filter((pair) => wantedKeys.includes(pair[0]));
-    return Object.fromEntries(filteredEntries);
-};
-
+// Throws an error if network request fails.
 export const searchEntities = async (search, language) => {
     const url = wdk.searchEntities({ search, language });
-    // TODO: add exception handling for api call failure and result.data.search etc. being undefined.
     const result = await axios.get(url);
-    const filtered = (result.data.search).map(obj => dropKeys(obj));
-    return {
-        entities: filtered,
-        columns: wantedKeys
-    };
+    return result.data.search;
 };
 
+// Throws an error if network request fails.
 export const executeQuery = async (query) => {
-    // TODO: add exception handling.
     const [url, body] = wdk.sparqlQuery(query).split('?');
     const result = await axios.post(url, body);
     return result.data;
