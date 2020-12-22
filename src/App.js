@@ -15,7 +15,7 @@ function App() {
       <Container fluid>
         <Row>
           <Col sm='3' className='leftPaneCol'>
-              <LeftPane onSearch={setData} onDataSourceChange={setDataSourceType} />
+              <LeftPane setData={setData} onDataSourceChange={setDataSourceType} />
           </Col>
           <Col sm='9' className='rightPanelCol'>
               <RightPane data={data} dataSourceType={dataSourceType} />
