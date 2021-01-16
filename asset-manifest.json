@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/wikidata-explorer/static/css/main.19e29d83.chunk.css",
-    "main.js": "/wikidata-explorer/static/js/main.a834eea5.chunk.js",
-    "main.js.map": "/wikidata-explorer/static/js/main.a834eea5.chunk.js.map",
+    "main.js": "/wikidata-explorer/static/js/main.7d01a5fa.chunk.js",
+    "main.js.map": "/wikidata-explorer/static/js/main.7d01a5fa.chunk.js.map",
     "runtime-main.js": "/wikidata-explorer/static/js/runtime-main.0f98db55.js",
     "runtime-main.js.map": "/wikidata-explorer/static/js/runtime-main.0f98db55.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/wikidata-explorer/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.e59a8f7a.chunk.js": "/wikidata-explorer/static/js/2.e59a8f7a.chunk.js",
-    "static/js/2.e59a8f7a.chunk.js.map": "/wikidata-explorer/static/js/2.e59a8f7a.chunk.js.map",
+    "static/js/2.c3f15ff7.chunk.js": "/wikidata-explorer/static/js/2.c3f15ff7.chunk.js",
+    "static/js/2.c3f15ff7.chunk.js.map": "/wikidata-explorer/static/js/2.c3f15ff7.chunk.js.map",
     "static/js/3.a4c6a4b8.chunk.js": "/wikidata-explorer/static/js/3.a4c6a4b8.chunk.js",
     "static/js/3.a4c6a4b8.chunk.js.map": "/wikidata-explorer/static/js/3.a4c6a4b8.chunk.js.map",
     "index.html": "/wikidata-explorer/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/wikidata-explorer/static/css/2.20aa2d7b.chunk.css.map",
     "static/css/main.19e29d83.chunk.css.map": "/wikidata-explorer/static/css/main.19e29d83.chunk.css.map",
-    "static/js/2.e59a8f7a.chunk.js.LICENSE.txt": "/wikidata-explorer/static/js/2.e59a8f7a.chunk.js.LICENSE.txt"
+    "static/js/2.c3f15ff7.chunk.js.LICENSE.txt": "/wikidata-explorer/static/js/2.c3f15ff7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0f98db55.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.e59a8f7a.chunk.js",
+    "static/js/2.c3f15ff7.chunk.js",
     "static/css/main.19e29d83.chunk.css",
-    "static/js/main.a834eea5.chunk.js"
+    "static/js/main.7d01a5fa.chunk.js"
   ]
 }
